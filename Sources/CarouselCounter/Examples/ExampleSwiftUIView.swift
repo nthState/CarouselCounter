@@ -17,8 +17,20 @@ extension ExampleSwiftUIView: View {
   
   var body: some View {
     
+    let gesture =  DragGesture()
+      .onChanged { gesture in
+        withAnimation {
+          let x = gesture.startLocation.x + gesture.translation.width
+          self.number = Int(x)
+        }
+      }
+      .onEnded { _ in
+        
+      }
+    
     VStack(spacing: 24) {
       counter
+        .gesture(gesture)
       controlButtons
     }
     
@@ -26,7 +38,6 @@ extension ExampleSwiftUIView: View {
   
   var counter: some View {
     Text("1")
-      .border(Color.pink)
       .carouselCounter(value: number) { index, layout in
         
         Text("\(layout.value)")
@@ -41,6 +52,7 @@ extension ExampleSwiftUIView: View {
   
   var controlButtons: some View {
     HStack {
+      
       Button {
         withAnimation {
           number -= 1
