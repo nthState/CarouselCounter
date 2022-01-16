@@ -10,13 +10,17 @@
 import SwiftUI
 
 public struct LayoutData: Identifiable {
-  public let index: Int
   public let id: Int
   public let value: Int
   public let offset: CGFloat
   public let scale: CGFloat
   public let opacity: CGFloat
   public let zIndex: Double
+}
+
+internal struct LayoutContainer: Identifiable {
+  let id: Int
+  let layout: LayoutData
 }
 
 public extension View {
@@ -51,21 +55,21 @@ private struct CarouselCounter<CounterContent>: AnimatableModifier where Counter
     let n = self.value
     let viewIdBase = self.value
     
-    let items: [LayoutData] = [
-      LayoutData(index: 0, id: 0 + viewIdBase, value: n-2, offset: -40, scale: 0.5,  opacity: 0.15,    zIndex: 100),
-      LayoutData(index: 1, id: 1 + viewIdBase, value: n-1, offset: -20, scale: 0.75, opacity: 0.25,    zIndex: 150),
-      LayoutData(index: 2, id: 2 + viewIdBase, value: n,   offset: 0,   scale: 1,    opacity: 1,       zIndex: 300),
-      LayoutData(index: 3, id: 3 + viewIdBase, value: n+1, offset: +20, scale: 0.75, opacity: 0.25,    zIndex: 151),
-      LayoutData(index: 4, id: 4 + viewIdBase, value: n+2, offset: +40, scale: 0.5,  opacity: 0.15,    zIndex: 101)
+    let items: [LayoutContainer] = [
+      LayoutContainer(id: 0, layout: LayoutData(id: 0 + viewIdBase, value: n-2, offset: -40, scale: 0.5,  opacity: 0.15,    zIndex: 100)),
+      LayoutContainer(id: 1, layout: LayoutData(id: 1 + viewIdBase, value: n-1, offset: -20, scale: 0.75, opacity: 0.25,    zIndex: 150)),
+      LayoutContainer(id: 2, layout: LayoutData(id: 2 + viewIdBase, value: n,   offset: 0,   scale: 1,    opacity: 1,       zIndex: 300)),
+      LayoutContainer(id: 3, layout: LayoutData(id: 3 + viewIdBase, value: n+1, offset: +20, scale: 0.75, opacity: 0.25,    zIndex: 151)),
+      LayoutContainer(id: 4, layout: LayoutData(id: 4 + viewIdBase, value: n+2, offset: +40, scale: 0.5,  opacity: 0.15,    zIndex: 101))
     ]
     
     return ZStack(alignment: .center) {
       //ForEach(items.indices, id: \.self) { index in
-      ForEach(items) { layout in
+      ForEach(items) { item in
         //let item = items[index]
-        counterContent(layout.index, layout)
-          .offset(x: layout.offset)
-          .id(layout.id)
+        counterContent(item.id, item.layout)
+          .offset(x: item.layout.offset)
+          .id(item.layout.id)
 //          .offset(x: item.offset)
 //          .zIndex(item.zIndex)
 //          .id(item.id)
