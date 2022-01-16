@@ -27,7 +27,7 @@ public extension View {
   
 }
 
-private struct CarouselCounter<CounterContent>: AnimatableModifier where CounterContent: View {
+public struct CarouselCounter<CounterContent>: AnimatableModifier where CounterContent: View {
   
   /// The number to display
   var value: Int
@@ -46,7 +46,7 @@ private struct CarouselCounter<CounterContent>: AnimatableModifier where Counter
   }
   
   
-  func body(content: Content) -> some View {
+  public func body(content: Content) -> some View {
     
     let n = self.value
     let viewIdBase = self.value

@@ -9,12 +9,29 @@
 
 import XCTest
 @testable import CarouselCounter
+import SwiftUI
 
 final class CarouselCounterTests: XCTestCase {
-  func testExample() throws {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct
-    // results.
-    //XCTAssertEqual(CarouselCounter().text, "Hello, World!")
+  
+  func test_() throws {
+    
+    let x = CarouselCounter(value: 0) { index, layout in
+      EmptyView()
+    }
+    
+    print(x)
+    
   }
+  
+  func test_2() throws {
+    
+    let x = Text("1")
+      .carouselCounter(value: 1) { index, layout in
+        EmptyView()
+      }
+    
+    print(x)
+    
+  }
+  
 }
