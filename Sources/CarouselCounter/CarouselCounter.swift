@@ -35,10 +35,10 @@ public extension View {
 public struct CarouselCounter<CounterContent>: AnimatableModifier where CounterContent: View {
   
   /// The number to display
-  var value: Int
+  private var value: Int
   
   /// The content to render
-  var counterContent: (Int, LayoutData) -> CounterContent
+  internal var counterContent: (Int, LayoutData) -> CounterContent
   
   init(value: Int, @ViewBuilder counterContent: @escaping (Int, LayoutData) -> CounterContent) {
     self.value = value
