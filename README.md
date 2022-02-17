@@ -30,3 +30,7 @@ struct MyView: View {
   
 }
 ```
+
+| Before | After |
+|--------|-------|
+![Before](Sources/CarouselCounter/CarouselCounter.docc/Resources/Images/01_Carousel.png)|![After](Sources/CarouselCounter/CarouselCounter.docc/Resources/Images/03_Carousel.png)
