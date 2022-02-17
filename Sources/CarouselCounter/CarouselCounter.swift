@@ -12,10 +12,15 @@ import SwiftUI
 public struct LayoutData: Identifiable {
   internal let index: Int
   public let id: Int
+  /// Number which can be displayed
   public let value: Int
+  /// Horizontal offset from the center
   public let offset: CGFloat
+  /// Scale decreses from the center
   public let scale: CGFloat
+  /// Opacity decreases from the center
   public let opacity: CGFloat
+  /// ZIndex decreases from the center
   public let zIndex: Double
 }
 
@@ -44,7 +49,6 @@ public struct CarouselCounter<CounterContent>: AnimatableModifier where CounterC
     get { value }
     set { value = newValue }
   }
-  
   
   public func body(content: Content) -> some View {
     

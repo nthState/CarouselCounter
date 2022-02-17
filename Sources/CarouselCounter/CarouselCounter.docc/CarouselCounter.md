@@ -1,4 +1,4 @@
-# Chris's SwiftUI Carousel Counter
+# ``CarouselCounter``
 
 The Carousel Counter is a SwiftUI View Modifier that changes your view into a caoursel of
 numbers.
@@ -30,3 +30,10 @@ struct MyView: View {
   
 }
 ```
+
+## Topics
+
+### Guides
+
+- <doc:Getting-Started-with-PathWarp>
+- <doc:Developer-Diary>

@@ -13,25 +13,19 @@ import SwiftUI
 
 final class CarouselCounterTests: XCTestCase {
   
-  func test_() throws {
+  func test_viewbuilder_called() throws {
+    
+    let expectation = XCTestExpectation(description: "")
     
     let x = CarouselCounter(value: 0) { index, layout in
       EmptyView()
+      let _ = expectation.fulfill()
     }
-    
-    print(x)
-    
-  }
-  
-  func test_2() throws {
-    
-    let x = Text("1")
-      .carouselCounter(value: 1) { index, layout in
-        EmptyView()
-      }
-    
-    print(x)
+
+    let _ = x.counterContent(0, LayoutData(index: 0, id: 0, value: 0, offset: 0, scale: 0, opacity: 0, zIndex: 0))
+
+    wait(for: [expectation], timeout: 1)
     
   }
-  
+
 }

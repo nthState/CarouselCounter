@@ -1,0 +1,41 @@
+@Tutorial() {
+  @Intro(title: "Getting Started with Carousel Counter in SwiftUI") {
+    In this tutorial, I'll show you how to integrate Carousel Counter
+    into your SwiftUI Project
+    
+  }
+  
+  @Section(title: "Dislaying the Carousel") {
+    @ContentAndMedia {
+      Let's get started...
+      
+    }
+    
+    @Steps {
+      @Step {
+        Start with a Text view
+        
+        @Code(name: "Carousel.swift", file: "01_Carousel.swift") {
+          @Image(source: "01_Carousel.png", alt: "accessible description")
+        }
+      }
+      
+      @Step {
+        Import the ``CarouselCounter`` Swift Package
+        
+        @Code(name: "Carousel.swift", file: "02_Carousel.swift") {
+          
+        }
+      }
+      
+      @Step {
+        Add the View Modifier and set the View that you wish to display for each item in the carousel
+        
+        @Code(name: "Carousel.swift", file: "03_Carousel.swift") {
+          @Image(source: "03_Carousel.png", alt: "accessible description")
+        }
+      }
+
+    }
+  }
+}

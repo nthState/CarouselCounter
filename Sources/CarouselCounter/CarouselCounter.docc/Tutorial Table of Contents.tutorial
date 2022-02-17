@@ -2,20 +2,13 @@
     @Intro(title: "Guides") {
         text
         
-        //@Image(source: file, alt: "accessible description")
     }
     
     @Chapter(name: "Getting Started") {
         getting started
         
-        //@Image(source: file, alt: "accessible description")
         
-        @TutorialReference(tutorial: "doc:Getting-Started-with-PathWarp")
+        @TutorialReference(tutorial: "doc:Getting-Started-with-CarouselCounter")
     }
-    
-    @Chapter(name: "Developer Diary") {
-       ssssss
-        
-        @TutorialReference(tutorial: "doc:Developer-Diary")
-    }
+
 }

@@ -10,7 +10,7 @@
 import SwiftUI
 
 struct ExampleSwiftUIView {
-  @State var number: Int = 50
+  @State var number: Int = 100
 }
 
 extension ExampleSwiftUIView: View {
@@ -37,14 +37,14 @@ extension ExampleSwiftUIView: View {
   }
   
   var counter: some View {
-    Text("1")
+    Text("100")
       .carouselCounter(value: number) { index, layout in
-        
+
         Text("\(layout.value)")
           .animatableFont(fontName: "Arial", fontSize: 22 * layout.scale)
           .opacity(layout.opacity)
           .zIndex(layout.zIndex)
-        
+
       }
       .animation(Animation.easeIn, value: number)
       .frame(height: 56)
@@ -79,6 +79,8 @@ extension ExampleSwiftUIView: View {
 struct ExampleSwiftUIView_Previews: PreviewProvider {
   static var previews: some View {
     ExampleSwiftUIView()
+      .preferredColorScheme(.light)
+      .padding()
   }
 }
 
