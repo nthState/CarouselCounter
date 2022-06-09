@@ -34,3 +34,26 @@ struct MyView: View {
 | Before | After |
 |--------|-------|
 ![Before](Sources/CarouselCounter/CarouselCounter.docc/Resources/Images/01_Carousel.png)|![After](Sources/CarouselCounter/CarouselCounter.docc/Resources/Images/03_Carousel.png)
+
+## Documentation
+
+Documentation website here: https://nthstate.github.io/CarouselCounter/documentation/carouselcounter/
+
+Building the docs
+
+```
+swift build
+```
+
+```
+PACKAGE_NAME=CarouselCounter
+REPOSITORY_NAME=CarouselCounter
+OUTPUT_PATH=./docs
+
+swift package --allow-writing-to-directory $OUTPUT_PATH \
+    generate-documentation --target $PACKAGE_NAME \
+    --disable-indexing \
+    --transform-for-static-hosting \
+    --hosting-base-path $REPOSITORY_NAME \
+    --output-path $OUTPUT_PATH
+ ```

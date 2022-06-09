@@ -9,6 +9,8 @@ Number views are animated from one position to the next
 
 ## Overview
 
+![Image](03_Carousel.png)
+
 ```
 import SwiftUI
 import CarouselCounter
@@ -35,5 +37,4 @@ struct MyView: View {
 
 ### Guides
 
-- <doc:Getting-Started-with-PathWarp>
-- <doc:Developer-Diary>
+- <doc:Getting-Started-with-CarouselCounter>
